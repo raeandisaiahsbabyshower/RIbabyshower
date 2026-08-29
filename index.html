@@ -84,6 +84,28 @@
         .detail-block p {
             font-size: 1.1rem;
             line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive styling to ensure your custom map fits perfectly on phones */
+        .map-wrapper {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 75%; /* Maintains a healthy layout balance */
+            margin-top: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid #ddd;
+        }
+
+        .map-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
 
         .btn-container {
@@ -184,15 +206,17 @@
             <div class="detail-block">
                 <h3>Where</h3>
                 <p><strong>Prisons Sports and Recreational Club</strong><br>Churchill Roosevelt Highway, Arouca</p>
+                
+                <!-- Your exact custom map iframe, completely responsive -->
+                <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d249.3636450214468!2d0!3d0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c35ff5c858e140f%3A0xaa91c47c4a0cba45!2sPrisons%20Sports%20%26%20Recreational%20Club!5e0!3m2!1sen!2stt!4v1788043261779!5m2!1sen!2stt" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
             </div>
         </section>
 
         <section class="btn-container">
-            <!-- Full Map URL to prevent dynamic link mobile crashes -->
-            <a href="https://google.com" target="_blank" class="btn">Get Directions</a>
-            
-            <!-- Exact Corrected Amazon Registry Link -->
-            <a href="https://www.amazon.com/baby-reg/rae-marie-briggs-september-2026-doral/1X58QPTJ1ESEZ?ref_=cm_sw_r_apin_dp_072CQYZ57MV42K8GAVEM&language=en-US" target="_blank" class="btn btn-gold">View Baby Registry</a>
+            <a href="https://google.com" target="_blank" class="btn">Open Full Map App</a>
+            <a href="https://amazon.com" target="_blank" class="btn btn-gold">View Baby Registry</a>
         </section>
 
         <section class="rsvp-section">
