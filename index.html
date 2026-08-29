@@ -23,38 +23,46 @@
             background-color: var(--cream);
             color: var(--text-dark);
             text-align: center;
+            padding-bottom: 40px;
         }
 
         header {
             background-color: var(--dark-green);
             color: white;
-            padding: 60px 20px;
+            padding: 40px 20px;
             border-bottom: 5px solid var(--gold);
         }
 
-        .title-accent {
-            font-family: 'Brush Script MT', cursive, sans-serif;
-            color: var(--gold);
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-        }
-
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 20px;
         }
 
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-style: italic;
             opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        .flyer-container {
+            max-width: 480px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        .flyer-img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border: 3px solid var(--gold);
         }
 
         .details-section {
-            max-width: 600px;
-            margin: 40px auto;
+            max-width: 500px;
+            margin: 30px auto;
             padding: 20px;
             background: white;
             border-radius: 12px;
@@ -62,20 +70,20 @@
         }
 
         .detail-block {
-            margin: 30px 0;
+            margin: 20px 0;
         }
 
         .detail-block h3 {
             color: var(--dark-green);
             text-transform: uppercase;
-            font-size: 1rem;
+            font-size: 0.9rem;
             letter-spacing: 1px;
             margin-bottom: 5px;
         }
 
         .detail-block p {
             font-size: 1.1rem;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         .btn-container {
@@ -83,45 +91,37 @@
             flex-direction: column;
             gap: 15px;
             max-width: 400px;
-            margin: 0 auto 40px auto;
+            margin: 0 auto 30px auto;
             padding: 0 20px;
         }
 
         .btn {
-            display: inline-block;
-            padding: 15px;
+            display: block;
+            width: 100%;
+            padding: 16px;
             background-color: var(--dark-green);
-            color: white;
+            color: white !important;
             text-decoration: none;
             font-weight: bold;
             border-radius: 30px;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
             text-transform: uppercase;
             font-size: 0.9rem;
             letter-spacing: 1px;
-        }
-
-        .btn:hover {
-            background-color: transparent;
-            color: var(--dark-green);
-            border-color: var(--dark-green);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(11, 48, 29, 0.2);
         }
 
         .btn-gold {
             background-color: var(--gold);
-            color: #000;
-        }
-
-        .btn-gold:hover {
-            background-color: transparent;
-            color: var(--gold);
-            border-color: var(--gold);
+            color: #000 !important;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
         }
 
         .rsvp-section {
             background-color: #F3ECE0;
             padding: 40px 20px;
+            margin-top: 40px;
         }
 
         form {
@@ -147,9 +147,9 @@
             background-color: white;
         }
 
-        button {
+        .whatsapp-submit-btn {
             width: 100%;
-            padding: 15px;
+            padding: 16px;
             background-color: #25D366;
             color: white;
             border: none;
@@ -159,29 +159,23 @@
             text-transform: uppercase;
             font-size: 1rem;
             letter-spacing: 1px;
-            transition: background 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #128C7E;
-        }
-
-        footer {
-            padding: 30px;
-            font-size: 0.9rem;
-            color: #777;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="title-accent">oh boy</div>
-        <h1>Rae & Isaiah's<br>Baby Shower</h1>
-        <p class="subtitle">A little wild one is on the way!</p>
+        <h1>Rae & Isaiah's</h1>
+        <p class="subtitle">Baby Shower Celebration Portal</p>
     </header>
 
     <main>
+        <!-- The beautiful flyer is called here -->
+        <section class="flyer-container">
+            <img src="flyer.jpg" alt="Rae & Isaiah's Baby Shower Flyer" class="flyer-img">
+        </section>
+
         <section class="details-section">
             <div class="detail-block">
                 <h3>When</h3>
@@ -195,24 +189,25 @@
         </section>
 
         <section class="btn-container">
-            <!-- Exact Google Maps Location for the Venue -->
-            <a href="https://google.com" target="_blank" class="btn">Get Directions</a>
-            <!-- Temporary Baby Registry Link Portal -->
+            <!-- Exact Google Maps Share Link -->
+            <a href="https://maps.app.goo.gl/15aUm5hEwmd9ehXV7?g_st=ic" target="_blank" class="btn">Get Directions</a>
+            
+            <!-- Real Live Amazon Registry Link -->
             <a href="https://amazon.com" target="_blank" class="btn btn-gold">View Baby Registry</a>
         </section>
 
         <section class="rsvp-section">
-            <h2 style="margin-bottom: 20px; color: var(--dark-green);">💌 RSVP</h2>
-            <p style="margin-bottom: 20px; max-width: 400px; margin-inline: auto;">Select your response below. Tapping submit will open WhatsApp to send your final details directly over.</p>
+            <h2 style="margin-bottom: 15px; color: var(--dark-green);">💌 Send Your RSVP</h2>
+            <p style="margin-bottom: 25px; max-width: 400px; margin-inline: auto; font-size: 0.95rem; color: #555;">Fill out your selection below. Tapping the button will open WhatsApp with your text ready to send.</p>
             
-            <form id="rsvpForm">
+            <form>
                 <label for="attendance">Will you be attending?</label>
-                <select id="attendance" required>
+                <select id="attendance">
                     <option value="Yes, I'll be there!">Yes, I'll be there!</option>
                     <option value="Sorry, I can't make it.">Sorry, I can't make it.</option>
                 </select>
 
-                <label for="guests">Number of people attending</label>
+                <label for="guests">Total guests attending</label>
                 <select id="guests">
                     <option value="1">1 person</option>
                     <option value="2">2 people</option>
@@ -220,7 +215,7 @@
                     <option value="4">4 people</option>
                 </select>
 
-                <button type="button" onclick="sendRSVP()">Send RSVP via WhatsApp</button>
+                <button type="button" class="whatsapp-submit-btn" onclick="launchWhatsApp()">Submit RSVP via WhatsApp</button>
             </form>
         </section>
     </main>
@@ -230,18 +225,18 @@
     </footer>
 
     <script>
-        function sendRSVP() {
-            const attendance = document.getElementById('attendance').value;
-            const guests = document.getElementById('guests').value;
-            const phoneNumber = "18683153322"; // Country code added for international web links
+        function launchWhatsApp() {
+            var attendanceChoice = document.getElementById('attendance').value;
+            var guestCount = document.getElementById('guests').value;
             
-            let message = `Hi! I'm RSVPing for Rae & Isaiah's Baby Shower. Status: ${attendance}`;
-            if(attendance.includes("Yes")) {
-                message += ` Total guests: ${guests}`;
+            var cleanMessage = "Hi! I'm RSVPing for Rae & Isaiah's Baby Shower. Status: " + attendanceChoice;
+            if(attendanceChoice.indexOf("Yes") !== -1) {
+                cleanMessage += " | Total seats needed: " + guestCount;
             }
             
-            const whatsappUrl = `https://whatsapp.com{phoneNumber}&text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
+            // Fixed direct WhatsApp API link using your exact phone number string
+            var targetURL = "https://wa.me" + encodeURIComponent(cleanMessage);
+            window.open(targetURL, '_blank');
         }
     </script>
 
