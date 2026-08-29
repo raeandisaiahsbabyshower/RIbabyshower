@@ -29,18 +29,18 @@
         header {
             background-color: var(--dark-green);
             color: white;
-            padding: 40px 20px;
+            padding: 30px 20px;
             border-bottom: 5px solid var(--gold);
         }
 
         h1 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             letter-spacing: 2px;
             text-transform: uppercase;
         }
 
         .subtitle {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-style: italic;
             opacity: 0.9;
             margin-top: 5px;
@@ -48,7 +48,7 @@
 
         .flyer-container {
             max-width: 480px;
-            margin: 30px auto;
+            margin: 25px auto;
             padding: 0 15px;
         }
 
@@ -62,7 +62,7 @@
 
         .details-section {
             max-width: 500px;
-            margin: 30px auto;
+            margin: 25px auto;
             padding: 20px;
             background: white;
             border-radius: 12px;
@@ -167,11 +167,11 @@
 
     <header>
         <h1>Rae & Isaiah's</h1>
-        <p class="subtitle">Baby Shower Celebration Portal</p>
+        <p class="subtitle">Baby Shower Portal</p>
     </header>
 
     <main>
-        <!-- The beautiful flyer is called here -->
+        <!-- Clean layout injection -->
         <section class="flyer-container">
             <img src="flyer.jpg" alt="Rae & Isaiah's Baby Shower Flyer" class="flyer-img">
         </section>
@@ -189,16 +189,13 @@
         </section>
 
         <section class="btn-container">
-            <!-- Exact Google Maps Share Link -->
-            <a href="https://maps.app.goo.gl/15aUm5hEwmd9ehXV7?g_st=ic" target="_blank" class="btn">Get Directions</a>
-            
-            <!-- Real Live Amazon Registry Link -->
+            <a href="https://goo.gl" target="_blank" class="btn">Get Directions</a>
             <a href="https://amazon.com" target="_blank" class="btn btn-gold">View Baby Registry</a>
         </section>
 
         <section class="rsvp-section">
             <h2 style="margin-bottom: 15px; color: var(--dark-green);">💌 Send Your RSVP</h2>
-            <p style="margin-bottom: 25px; max-width: 400px; margin-inline: auto; font-size: 0.95rem; color: #555;">Fill out your selection below. Tapping the button will open WhatsApp with your text ready to send.</p>
+            <p style="margin-bottom: 25px; max-width: 400px; margin-inline: auto; font-size: 0.95rem; color: #555;">Fill out your selection below. Tapping submit opens WhatsApp with your text ready to go.</p>
             
             <form>
                 <label for="attendance">Will you be attending?</label>
@@ -207,12 +204,12 @@
                     <option value="Sorry, I can't make it.">Sorry, I can't make it.</option>
                 </select>
 
-                <label for="guests">Total guests attending</label>
+                <label for="guests">Total seats needed</label>
                 <select id="guests">
-                    <option value="1">1 person</option>
-                    <option value="2">2 people</option>
-                    <option value="3">3 people</option>
-                    <option value="4">4 people</option>
+                    <option value="1">1 seat</option>
+                    <option value="2">2 seats</option>
+                    <option value="3">3 seats</option>
+                    <option value="4">4 seats</option>
                 </select>
 
                 <button type="button" class="whatsapp-submit-btn" onclick="launchWhatsApp()">Submit RSVP via WhatsApp</button>
@@ -234,7 +231,6 @@
                 cleanMessage += " | Total seats needed: " + guestCount;
             }
             
-            // Fixed direct WhatsApp API link using your exact phone number string
             var targetURL = "https://wa.me" + encodeURIComponent(cleanMessage);
             window.open(targetURL, '_blank');
         }
