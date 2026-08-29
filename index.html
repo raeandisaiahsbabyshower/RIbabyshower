@@ -246,27 +246,24 @@
         <p>Made with love for Rae, Isaiah & baby 🤎🌿</p>
     </footer>
 
-    <    <script>
+    <        <script>
         function launchWhatsApp() {
             var attendanceChoice = document.getElementById('attendance').value;
             var guestCount = document.getElementById('guests').value;
             
-            // Format the text message cleanly
             var cleanMessage = "Hi Rae and Isaiah! I'm sending over my RSVP.\n\n" +
                                "• Will you be attending?: " + attendanceChoice;
             
-            // Append the seat count context dynamically if they select yes
             if (attendanceChoice.indexOf("Yes") !== -1) {
                 cleanMessage += "\n• Total seats needed: " + guestCount + (guestCount === "1" ? " seat" : " seats");
             }
             
-            // Your exact target phone number formatted correctly into the WhatsApp URL template
-            var targetPhone = "18683153322";
+            var targetPhone = "18683144786";
             var targetURL = "https://wa.me" + targetPhone + "?text=" + encodeURIComponent(cleanMessage);
             
-            // Open the WhatsApp application window chat safely
             window.open(targetURL, '_blank');
         }
     </script>
 </body>
 </html>
+
