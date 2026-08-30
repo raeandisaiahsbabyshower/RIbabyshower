@@ -20,10 +20,12 @@
         }
 
         body {
-            background-color: var(--cream);
-            color: var(--text-dark);
+            background-color: var(--dark-green); /* Changed from cream to dark green */
+            color: var(--cream);                 /* Changed text from dark to cream */
             text-align: center;
             padding-bottom: 40px;
+}
+
         }
 
         header {
@@ -64,9 +66,12 @@
             max-width: 500px;
             margin: 25px auto;
             padding: 20px;
-            background: white;
+            background: var(--cream);    /* Changed background from white to cream */
+            color: var(--text-dark);     /* Kept text dark for high contrast readability */
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
         }
 
         .detail-block {
