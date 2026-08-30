@@ -151,6 +151,18 @@
             color: var(--dark-green);
         }
 
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            background-color: white;
+            color: var(--text-dark);
+            font-family: 'Georgia', serif;
+        }
+
         select {
             width: 100%;
             padding: 12px;
@@ -163,10 +175,11 @@
         }
 
         .whatsapp-submit-btn {
+            display: block;
             width: 100%;
             padding: 16px;
             background-color: #25D366;
-            color: white;
+            color: white !important;
             border: none;
             font-weight: bold;
             border-radius: 30px;
@@ -174,6 +187,8 @@
             text-transform: uppercase;
             font-size: 1rem;
             letter-spacing: 1px;
+            text-decoration: none;
+            text-align: center;
             box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
         }
 
@@ -206,13 +221,13 @@
                 <p><strong>Prisons Sports and Recreational Club</strong><br>Churchill Roosevelt Highway, Arouca</p>
                 
                 <div class="map-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d249.3636450214468!2d0!3d0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c35ff5c858e140f%3A0xaa91c47c4a0cba45!2sPrisons%20Sports%20%26%20Recreational%20Club!5e0!3m2!1sen!2stt!4v1788043261779!5m2!1sen!2stt" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    <iframe src="https://google.com" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
             </div>
         </section>
 
         <section class="btn-container">
-            <a href="https://www.amazon.com/baby-reg/rae-marie-briggs-september-2026-doral/1X58QPTJ1ESEZ?ref_=cm_sw_r_apin_dp_072CQYZ57MV42K8GAVEM&language=en-US" target="_blank" class="btn">View Baby Registry</a>
+            <a href="https://amazon.com" target="_blank" class="btn">View Baby Registry</a>
         </section>
 
         <section class="rsvp-section">
@@ -221,22 +236,15 @@
             
             <form>
                 <label for="guestName">Your Full Name</label>
-                <input type="text" id="guestName" placeholder="Enter your name here" required style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem; background-color: white; color: var(--text-dark); font-family: 'Georgia', serif;">
+                <input type="text" id="guestName" placeholder="Enter your name here" required>
+
                 <label for="attendance">Will you be attending?</label>
                 <select id="attendance">
                     <option value="Yes, I'll be there!">Yes, I'll be there!</option>
                     <option value="Sorry, I can't make it.">Sorry, I can't make it.</option>
                 </select>
 
-                <label for="guests">Total seats needed</label>
-                <select id="guests">
-                    <option value="1">1 seat</option>
-                    <option value="2">2 seats</option>
-                    <option value="3">3 seats</option>
-                    <option value="4">4 seats</option>
-                </select>
-
-                <button type="button" class="whatsapp-submit-btn" onclick="launchWhatsApp()">Submit RSVP via WhatsApp</button>
+                <a href="#" class="whatsapp-submit-btn" onclick="launchWhatsApp(event)">Submit RSVP via WhatsApp</a>
             </form>
         </section>
     </main>
@@ -245,33 +253,28 @@
         <p>Made with love for Rae, Isaiah & baby 🤎🌿</p>
     </footer>
 
-    <        <script>
-        function launchWhatsApp() {
-            // Extracts whatever data the user inputted into the form elements
+    <script>
+        function launchWhatsApp(event) {
+            event.preventDefault();
+
             var fullName = document.getElementById('guestName').value.trim();
             var attendanceChoice = document.getElementById('attendance').value;
-            var guestCount = document.getElementById('guests').value;
             
-            // Requires a name input before letting them launch WhatsApp
             if (fullName === "") {
                 alert("Please enter your name before sending your RSVP.");
                 return;
             }
             
-            // Structures the structured text dynamically
             var finalRSVPMessage = "Hi Rae and Isaiah! I'm sending over my RSVP.\n\n" +
                                    "• Name: " + fullName + "\n" +
                                    "• Attending?: " + attendanceChoice;
             
-            if (attendanceChoice.indexOf("Yes") !== -1) {
-                finalRSVPMessage += "\n• Total seats needed: " + guestCount + (guestCount === "1" ? " seat" : " seats");
-            }
+            // Your exact target API URL configuration structured properly
+            var directChatLink = "https://whatsapp.com"; 
             
-            // Encodes the dynamic info flawlessly onto the custom universal WhatsApp hook link
-            var formattedUrl = "https://api.whatsapp.com/send/?phone=18683144786&text&type=phone_number&app_absent=0&wame_ctl=1" + encodeURIComponent(finalRSVPMessage);
+            var formattedUrl = directChatLink + "&text=" + encodeURIComponent(finalRSVPMessage);
             window.open(formattedUrl, '_blank');
         }
     </script>
 </body>
 </html>
-
