@@ -22,10 +22,12 @@
         }
 
         body {
-    background-color: var(--dark-green); /* Swapped background to dark green */
-    color: var(--text-dark);
+    background-color: var(--dark-green);
+    color: white; /* Keeps your general text bright on the green */
     text-align: center;
     padding-bottom: 40px;
+}
+
 }
 
 
@@ -69,10 +71,11 @@
     max-width: 500px;
     margin: 25px auto;
     padding: 20px;
-    background: var(--cream);    /* Changed background from white to cream */
-    color: var(--text-dark);     /* Kept text dark for high contrast readability */
+    background: transparent; /* This removes the giant cream box */
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: none; /* Removes the box shadow so it blends seamlessly */
+}
+
 }
 
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -89,11 +92,13 @@
         }
 
         .detail-block h3 {
-            color: var(--gold); /* Changed from dark green to gold */
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
+    color: var(--gold); /* Changes headings back to your rich gold */
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
 }
 
         }
@@ -167,9 +172,20 @@
         }
 
         .btn-gold {
-            background-color: var(--gold);
-            color: #000 !important;
-            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+    background-color: var(--gold);
+    color: #000 !important;
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 16px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+}
+
         }
 
         .rsvp-section {
