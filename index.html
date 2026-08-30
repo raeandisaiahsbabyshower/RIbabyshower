@@ -66,11 +66,16 @@
         }
 
         .details-section {
-            max-width: 500px;
-            margin: 25px auto;
-            padding: 20px;
-            background: transparent; /* Changed from white to transparent */
-            border-radius: 12px;
+    max-width: 500px;
+    margin: 25px auto;
+    padding: 20px;
+    background: var(--cream);    /* Restores the light container background */
+    color: var(--text-dark);     /* Forces text inside to be clearly readable */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-align: center;          /* Centers all event text and the map container */
+}
+
 }
 
 
@@ -119,24 +124,25 @@
 
         .btn-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;        /* Added to center the button horizontally */
-    gap: 15px;
-    max-width: 400px;
-    margin: 30px auto;          /* Reset margins to balance layout spacing */
+    justify-content: center;     /* Explicitly centers flex elements horizontally */
+    align-items: center;
+    max-width: 500px;            /* Matches the width of your other sections */
+    margin: 30px auto;
     padding: 0 20px;
     width: 100%;
+}
+
 }
 
         }
 
         .btn {
-    display: inline-block;      /* Changed from block to allow precise centering */
-    width: max-content;         /* Tightens the gold background to the text width */
-    min-width: 280px;           /* Gives it a clean, touch-friendly size on phones */
-    padding: 16px 30px;         /* Adds symmetrical padding on the left and right */
-    background-color: var(--dark-green);
-    color: white !important;
+    display: inline-block;       /* Allows proper block sizing without scaling full-width */
+    width: 100%;
+    max-width: 320px;            /* Locks down an elegant button size on all screens */
+    padding: 16px 20px;
+    background-color: var(--gold);
+    color: #000 !important;
     text-decoration: none;
     font-weight: bold;
     border-radius: 30px;
@@ -145,7 +151,9 @@
     letter-spacing: 1px;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(11, 48, 29, 0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
 }
 
         }
