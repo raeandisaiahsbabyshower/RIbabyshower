@@ -259,7 +259,7 @@
             }
             
             var targetPhone = "18683144786";
-            var targetURL = "https://wa.me" + targetPhone + "?text=" + encodeURIComponent(cleanMessage);
+            var targetURL = "https://api.whatsapp.com/send/?phone=18683144786&text&type=phone_number&app_absent=0&wame_ctl=1" + targetPhone + "?text=" + encodeURIComponent(cleanMessage);
             
             window.open(targetURL, '_blank');
         }
