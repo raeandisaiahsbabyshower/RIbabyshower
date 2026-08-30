@@ -148,13 +148,12 @@
         }
 
         .btn {
-    display: inline-block;      /* Changed from block to allow precise centering */
-    width: max-content;         /* Tightens the gold background to the text width */
-    min-width: 280px;           /* Gives it a clean, touch-friendly size on phones */
-    padding: 16px 30px;         /* Adds symmetrical padding on the left and right */
-    background-color: var(--dark-green);
-    color: white !important;
-    text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background-color: var(--gold); /* Brings back the gold color */
+    color: #000 !important;        /* Makes the text dark and readable */
+    text-decoration: none;         /* Removes that blue hyperlink underline */
     font-weight: bold;
     border-radius: 30px;
     text-transform: uppercase;
@@ -162,7 +161,9 @@
     letter-spacing: 1px;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(11, 48, 29, 0.2);
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+}
+
 }
 
 }
@@ -189,9 +190,12 @@
         }
 
         .rsvp-section {
-            background-color: #F3ECE0;
-            padding: 40px 20px;
-            margin-top: 40px;
+    background-color: #F3ECE0; /* Brings back the cream/beige container card */
+    padding: 40px 20px;
+    margin-top: 40px;
+    color: var(--text-dark);   /* Ensures text inside stays dark */
+}
+
         }
 
         form {
