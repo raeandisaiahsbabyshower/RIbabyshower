@@ -247,20 +247,29 @@
 
     <        <script>
         function launchWhatsApp() {
+            // Extracts whatever data the user inputted into the form elements
+            var fullName = document.getElementById('guestName').value.trim();
             var attendanceChoice = document.getElementById('attendance').value;
             var guestCount = document.getElementById('guests').value;
             
-            var cleanMessage = "Hi Rae and Isaiah! I'm sending over my RSVP.\n\n" +
-                               "• Will you be attending?: " + attendanceChoice;
-            
-            if (attendanceChoice.indexOf("Yes") !== -1) {
-                cleanMessage += "\n• Total seats needed: " + guestCount + (guestCount === "1" ? " seat" : " seats");
+            // Requires a name input before letting them launch WhatsApp
+            if (fullName === "") {
+                alert("Please enter your name before sending your RSVP.");
+                return;
             }
             
-            var targetPhone = "18683144786";
-            var targetURL = "https://api.whatsapp.com/send/?phone=18683144786&text&type=phone_number&app_absent=0&wame_ctl=1" + targetPhone + "?text=" + encodeURIComponent(cleanMessage);
+            // Structures the structured text dynamically
+            var finalRSVPMessage = "Hi Rae and Isaiah! I'm sending over my RSVP.\n\n" +
+                                   "• Name: " + fullName + "\n" +
+                                   "• Attending?: " + attendanceChoice;
             
-            window.open(targetURL, '_blank');
+            if (attendanceChoice.indexOf("Yes") !== -1) {
+                finalRSVPMessage += "\n• Total seats needed: " + guestCount + (guestCount === "1" ? " seat" : " seats");
+            }
+            
+            // Encodes the dynamic info flawlessly onto the custom universal WhatsApp hook link
+            var formattedUrl = "https://api.whatsapp.com/send/?phone=18683144786&text&type=phone_number&app_absent=0&wame_ctl=1" + encodeURIComponent(finalRSVPMessage);
+            window.open(formattedUrl, '_blank');
         }
     </script>
 </body>
